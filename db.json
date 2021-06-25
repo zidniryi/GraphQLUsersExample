@@ -6,7 +6,7 @@
   ],
 
   "companies": [
-    { "id": "1", "name": "Google", "description": "serach love" },
+    { "id": "1", "name": "Google", "description": "search love" },
     { "id": "2", "name": "Apple", "description": "apple of my eyes" }
   ]
 }
