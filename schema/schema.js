@@ -10,6 +10,7 @@ const {
   GraphQLNonNull,
 } = graphql;
 
+// Schema for company
 const CompanyType = new GraphQLObjectType({
   name: "Company",
   fields: () => ({
@@ -27,6 +28,7 @@ const CompanyType = new GraphQLObjectType({
   }),
 });
 
+// Schema for users
 const UserType = new GraphQLObjectType({
   name: "User",
   fields: () => ({
@@ -44,6 +46,9 @@ const UserType = new GraphQLObjectType({
   }),
 });
 
+/**
+ * Root top of GraphQL
+ */
 const RootQuery = new GraphQLObjectType({
   name: "RootQueryType",
   fields: {
@@ -68,6 +73,9 @@ const RootQuery = new GraphQLObjectType({
   },
 });
 
+/**
+ * Mutation for CRUD
+ */
 const mutation = new GraphQLObjectType({
   name: "Mutation",
   fields: {
@@ -84,6 +92,17 @@ const mutation = new GraphQLObjectType({
             firstName,
             age,
           })
+          .then((res) => res.data);
+      },
+    },
+    deleteUser: {
+      type: UserType,
+      args: {
+        id: { type: GraphQLNonNull(GraphQLString) },
+      },
+      resolve(parentValue, args) {
+        return axios
+          .delete(`http://localhost:3000/users/${args.id}`)
           .then((res) => res.data);
       },
     },
