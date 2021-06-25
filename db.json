@@ -1,6 +1,12 @@
 {
   "users": [
-    { "id": "23", "firstName": "Zidni", "age": 21 },
-    { "id": "22", "firstName": "Kina", "age": 20 }
+    { "id": "23", "firstName": "Zidni", "age": 21, "companyId": "1" },
+    { "id": "22", "firstName": "Kina", "age": 20, "companyId": "2" },
+    { "id": "21", "firstName": "Zaqina", "age": 21, "companyId": "2" }
+  ],
+
+  "companies": [
+    { "id": "1", "name": "Google", "description": "serach love" },
+    { "id": "2", "name": "Apple", "description": "apple of my eyes" }
   ]
 }
